@@ -1,0 +1,488 @@
+/* Activity Module Styles */
+.activity-module {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e2e8f0;
+  padding: 20px;
+}
+
+/* Header */
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.activity-title-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.activity-title-section h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.difficulty-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.difficulty-easy {
+  background: #22c55e;
+  color: white;
+}
+
+.difficulty-medium {
+  background: #f59e0b;
+  color: white;
+}
+
+.difficulty-hard {
+  background: #ef4444;
+  color: white;
+}
+
+.activity-meta {
+  display: flex;
+  gap: 20px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Main Content */
+.activity-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  height: calc(100vh - 120px);
+}
+
+@media (max-width: 1200px) {
+  .activity-content {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* Problem Panel */
+.problem-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.problem-section {
+  margin-bottom: 25px;
+}
+
+.problem-section h3 {
+  margin: 0 0 10px 0;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.problem-section p {
+  margin: 0;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.problem-statement {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Sample Test Cases */
+.sample-test-case {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.test-case-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #60a5fa;
+}
+
+.test-io {
+  margin: 8px 0;
+}
+
+.test-io strong {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.test-io pre {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 13px;
+  color: #e2e8f0;
+  overflow-x: auto;
+}
+
+/* Editor Panel */
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.language-select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.run-btn,
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.run-btn {
+  background: #374151;
+  color: #e2e8f0;
+}
+
+.run-btn:hover:not(:disabled) {
+  background: #4b5563;
+}
+
+.submit-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #16a34a;
+}
+
+.run-btn:disabled,
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Code Editor Container */
+.code-editor-container {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Input Section */
+.custom-input-section {
+  margin-top: 10px;
+}
+
+.custom-input-section label {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 5px;
+}
+
+.custom-input-section textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 10px;
+  color: #e2e8f0;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.custom-input-section textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Output Section */
+.output-section {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+}
+
+.output-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: rgba(0, 0, 0, 0.4);
+  color: #e2e8f0;
+  border-bottom-color: transparent;
+}
+
+.tab-btn:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.output-content {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 200px;
+}
+
+.output-display {
+  margin: 0;
+  padding: 15px;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 13px;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.test-results-display {
+  padding: 15px;
+}
+
+.no-results {
+  color: #94a3b8;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Test Results */
+.test-results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.score-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.score-summary.passed {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.score-summary.failed {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.score-icon {
+  font-size: 32px;
+}
+
+.score-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.score-details p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.test-cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.test-case-result {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.test-case-result.passed {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.test-case-result.failed {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.test-case-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.test-icon {
+  font-size: 16px;
+}
+
+.test-case-result.passed .test-icon {
+  color: #22c55e;
+}
+
+.test-case-result.failed .test-icon {
+  color: #ef4444;
+}
+
+.test-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.test-status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.test-status.pass {
+  background: #22c55e;
+  color: white;
+}
+
+.test-status.fail {
+  background: #ef4444;
+  color: white;
+}
+
+.test-case-details {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.test-detail {
+  font-size: 13px;
+}
+
+.test-detail label {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.test-detail pre {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 12px;
+  color: #e2e8f0;
+  overflow-x: auto;
+}
+
+.test-detail pre.wrong {
+  border-left: 3px solid #ef4444;
+}
+
+.test-detail.error pre {
+  color: #fca5a5;
+  border-left: 3px solid #ef4444;
+}
+
+.submission-error {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #fca5a5;
+}

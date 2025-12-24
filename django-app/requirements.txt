@@ -1,0 +1,12 @@
+Django>=5.0,<6.0
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.0
+pymongo>=4.0.0
+dnspython>=2.4.0
+django-cors-headers>=4.3.0
+celery>=5.3.0
+redis>=5.0.0
+requests>=2.31.0
+
+# AI Feedback with Google Gemini
+google-generativeai>=0.8.0

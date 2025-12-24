@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site_name }}</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/admin">Admin</a>
+    </nav>
+
+    <main>
+      <h1>Welcome to {{ site_name }}! 🚀</h1>
+      <p>Your Django project is up and running.</p>
+
+      {% if posts %}
+      <section>
+        <h2>Recent Posts</h2>
+        {% for post in posts %}
+        <article>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body|truncatewords:30 }}</p>
+          <small>{{ post.created|date:"F d, Y" }}</small>
+        </article>
+        {% endfor %}
+      </section>
+      {% else %}
+      <section>
+        <p>
+          No posts yet. Create some in the <a href="/admin">admin panel</a>!
+        </p>
+      </section>
+      {% endif %}
+
+      <section class="getting-started">
+        <h2>Getting Started</h2>
+        <ul>
+          <li>✅ Django project created</li>
+          <li>✅ Core app with models and views</li>
+          <li>✅ Admin panel ready</li>
+          <li>
+            📝 Create a superuser: <code>python manage.py createsuperuser</code>
+          </li>
+          <li>🔧 Edit <code>core/models.py</code> to add your models</li>
+          <li>🎨 Customize <code>templates/</code> and <code>static/</code></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with Django</p>
+    </footer>
+  </body>
+</html>
