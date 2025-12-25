@@ -1,9 +1,7 @@
 # JWT Authentication with MongoDB - Django Backend
 
 ## Overview
-
 This Django backend implements JWT authentication for Professors and Students using MongoDB as the database.
-
 ## Features
 
 - Separate authentication modules for Professors and Students

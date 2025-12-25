@@ -2,17 +2,25 @@
 Django settings for django-app project.
 """
 
+import os
 from pathlib import Path
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load environment variables from .env file (if python-dotenv is installed)
+try:
+    from dotenv import load_dotenv
+    load_dotenv(BASE_DIR / '.env')
+except ImportError:
+    pass  # python-dotenv not installed, use system environment variables
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-change-this-in-production-3f&y!7d@v6x9*0z2k'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-in-production-3f&y!7d@v6x9*0z2k')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = []
 
@@ -186,14 +194,14 @@ CELERY_TASK_TIME_LIMIT = 60  # 60 seconds max per task
 # =============================================================================
 # Judge0 API Configuration
 # =============================================================================
-JUDGE0_API_KEY = 'ab4d42ba16mshf8836a7def4062cp15f82fjsneaa81ca7c80c'
+JUDGE0_API_KEY = os.environ.get('JUDGE0_API_KEY', '')
 
 # =============================================================================
 # Gemini AI Configuration (for AI Feedback)
 # =============================================================================
 # Get your API key from: https://aistudio.google.com/app/apikey
-GEMINI_API_KEY = 'AIzaSyAEgLz7-Vj3zf0wrkZSU0ShOSpdkKq8tnI'  # Replace with your actual Gemini API key
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 
 # Model options: 'gemini-2.0-flash-exp' (latest, fastest), 'gemini-1.5-flash', 'gemini-1.5-pro'
-GEMINI_MODEL_NAME = 'gemini-3-flash-preview'
+GEMINI_MODEL_NAME = os.environ.get('GEMINI_MODEL_NAME', 'gemini-3-flash-preview')
 

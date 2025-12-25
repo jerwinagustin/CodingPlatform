@@ -28,6 +28,13 @@ db.sqlite3-journal
 .DS_Store
 Thumbs.db
 
-# Environment
+# Environment & API Keys
 .env
 .env.local
+.env.production
+.env.development
+*.local.py
+local_settings.py
+
+# API Keys (Gemini AI Feedback)
+# Store your GEMINI_API_KEY in .env file instead of settings.py
